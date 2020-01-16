@@ -57,7 +57,7 @@
 <span class="sourceLineNo">048</span><a id="line.48">     * @throws                      java.lang.reflect.InvocationTargetException Exception which can be thrown by</a>
 <span class="sourceLineNo">049</span><a id="line.49">     *                              SwingUtilities.invokeAndWait.</a>
 <span class="sourceLineNo">050</span><a id="line.50">     */</a>
-<span class="sourceLineNo">051</span><a id="line.51">    protected static void process_GUIUpdate(Gui gui, ArrayList&lt;String&gt; sedex_recipient_ids, Vector&lt;Processing_Receipts_Record&gt; RECEIPTS) throws InterruptedException, java.lang.reflect.InvocationTargetException</a>
+<span class="sourceLineNo">051</span><a id="line.51">    protected synchronized static void process_GUIUpdate(Gui gui, ArrayList&lt;String&gt; sedex_recipient_ids, Vector&lt;Processing_Receipts_Record&gt; RECEIPTS) throws InterruptedException, java.lang.reflect.InvocationTargetException</a>
 <span class="sourceLineNo">052</span><a id="line.52">        {</a>
 <span class="sourceLineNo">053</span><a id="line.53">        </a>
 <span class="sourceLineNo">054</span><a id="line.54">        final int NUMBER_TOTAL_OF_RECEIVERS = sedex_recipient_ids.size();</a>
