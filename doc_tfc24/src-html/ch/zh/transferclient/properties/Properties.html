@@ -260,34 +260,51 @@
 <span class="sourceLineNo">251</span><a id="line.251">            </a>
 <span class="sourceLineNo">252</span><a id="line.252">            String token = st.nextToken();</a>
 <span class="sourceLineNo">253</span><a id="line.253">            </a>
-<span class="sourceLineNo">254</span><a id="line.254">            if ((token.contains("%")) &amp;&amp; (token.split("%").length==2))</a>
+<span class="sourceLineNo">254</span><a id="line.254">            if (token.contains("%"))</a>
 <span class="sourceLineNo">255</span><a id="line.255">                {</a>
 <span class="sourceLineNo">256</span><a id="line.256">                </a>
-<span class="sourceLineNo">257</span><a id="line.257">                String id    = token.split("%")[0];</a>
-<span class="sourceLineNo">258</span><a id="line.258">                String label = token.split("%")[1];</a>
+<span class="sourceLineNo">257</span><a id="line.257">                String id;</a>
+<span class="sourceLineNo">258</span><a id="line.258">                String label;</a>
 <span class="sourceLineNo">259</span><a id="line.259">                </a>
-<span class="sourceLineNo">260</span><a id="line.260">                this.sedex_recipient_ids.add(id);</a>
-<span class="sourceLineNo">261</span><a id="line.261">                this.sedex_recipient_labels.add(label);</a>
-<span class="sourceLineNo">262</span><a id="line.262">                }</a>
-<span class="sourceLineNo">263</span><a id="line.263">            else</a>
-<span class="sourceLineNo">264</span><a id="line.264">                {</a>
-<span class="sourceLineNo">265</span><a id="line.265">                String id    = token;</a>
-<span class="sourceLineNo">266</span><a id="line.266">                String label = "";</a>
-<span class="sourceLineNo">267</span><a id="line.267">                </a>
-<span class="sourceLineNo">268</span><a id="line.268">                this.sedex_recipient_ids.add(id);</a>
-<span class="sourceLineNo">269</span><a id="line.269">                this.sedex_recipient_labels.add(label);</a>
-<span class="sourceLineNo">270</span><a id="line.270">                }</a>
-<span class="sourceLineNo">271</span><a id="line.271">            </a>
-<span class="sourceLineNo">272</span><a id="line.272">            }</a>
-<span class="sourceLineNo">273</span><a id="line.273">            </a>
-<span class="sourceLineNo">274</span><a id="line.274">        this.sedex_dir_outbox        = sedex_dir_outbox;</a>
-<span class="sourceLineNo">275</span><a id="line.275">        this.sedex_dir_receipts      = sedex_dir_receipts;</a>
-<span class="sourceLineNo">276</span><a id="line.276">        this.folder_results          = dir_results;</a>
-<span class="sourceLineNo">277</span><a id="line.277">        this.target_time             = target_time;</a>
-<span class="sourceLineNo">278</span><a id="line.278">        this.number_of_table_entries = number_of_table_entries;</a>
-<span class="sourceLineNo">279</span><a id="line.279">        }</a>
-<span class="sourceLineNo">280</span><a id="line.280">        </a>
-<span class="sourceLineNo">281</span><a id="line.281">    }</a>
+<span class="sourceLineNo">260</span><a id="line.260">                if (token.split("%").length==2)</a>
+<span class="sourceLineNo">261</span><a id="line.261">                    {</a>
+<span class="sourceLineNo">262</span><a id="line.262">                    id    = token.split("%")[0];</a>
+<span class="sourceLineNo">263</span><a id="line.263">                    label = token.split("%")[1];</a>
+<span class="sourceLineNo">264</span><a id="line.264">                    }</a>
+<span class="sourceLineNo">265</span><a id="line.265">                else</a>
+<span class="sourceLineNo">266</span><a id="line.266">                    {</a>
+<span class="sourceLineNo">267</span><a id="line.267">                    id    = token.split("%")[0];</a>
+<span class="sourceLineNo">268</span><a id="line.268">                    label = "Missing Label";</a>
+<span class="sourceLineNo">269</span><a id="line.269">                    }</a>
+<span class="sourceLineNo">270</span><a id="line.270">                </a>
+<span class="sourceLineNo">271</span><a id="line.271">                this.sedex_recipient_ids.add(id);</a>
+<span class="sourceLineNo">272</span><a id="line.272">                this.sedex_recipient_labels.add(label);</a>
+<span class="sourceLineNo">273</span><a id="line.273">                }</a>
+<span class="sourceLineNo">274</span><a id="line.274">            else</a>
+<span class="sourceLineNo">275</span><a id="line.275">                {</a>
+<span class="sourceLineNo">276</span><a id="line.276">                String id    = token;</a>
+<span class="sourceLineNo">277</span><a id="line.277">                String label = "Missing Label";</a>
+<span class="sourceLineNo">278</span><a id="line.278">                </a>
+<span class="sourceLineNo">279</span><a id="line.279">                this.sedex_recipient_ids.add(id);</a>
+<span class="sourceLineNo">280</span><a id="line.280">                this.sedex_recipient_labels.add(label);</a>
+<span class="sourceLineNo">281</span><a id="line.281">                }</a>
+<span class="sourceLineNo">282</span><a id="line.282">            </a>
+<span class="sourceLineNo">283</span><a id="line.283">            }</a>
+<span class="sourceLineNo">284</span><a id="line.284">        </a>
+<span class="sourceLineNo">285</span><a id="line.285">        for(int i=0;i&lt;this.sedex_recipient_ids.size();i++)</a>
+<span class="sourceLineNo">286</span><a id="line.286">            {</a>
+<span class="sourceLineNo">287</span><a id="line.287">            System.out.println(i+": "+this.sedex_recipient_ids.get(i)+" -&gt; "+this.sedex_recipient_labels.get(i));</a>
+<span class="sourceLineNo">288</span><a id="line.288">            }</a>
+<span class="sourceLineNo">289</span><a id="line.289">            </a>
+<span class="sourceLineNo">290</span><a id="line.290">            </a>
+<span class="sourceLineNo">291</span><a id="line.291">        this.sedex_dir_outbox        = sedex_dir_outbox;</a>
+<span class="sourceLineNo">292</span><a id="line.292">        this.sedex_dir_receipts      = sedex_dir_receipts;</a>
+<span class="sourceLineNo">293</span><a id="line.293">        this.folder_results          = dir_results;</a>
+<span class="sourceLineNo">294</span><a id="line.294">        this.target_time             = target_time;</a>
+<span class="sourceLineNo">295</span><a id="line.295">        this.number_of_table_entries = number_of_table_entries;</a>
+<span class="sourceLineNo">296</span><a id="line.296">        }</a>
+<span class="sourceLineNo">297</span><a id="line.297">        </a>
+<span class="sourceLineNo">298</span><a id="line.298">    }</a>
 
 
 
