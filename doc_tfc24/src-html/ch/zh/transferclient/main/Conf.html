@@ -8,7 +8,7 @@
 <main role="main">
 <div class="sourceContainer">
 <pre><span class="sourceLineNo">001</span><a id="line.1">/*</a>
-<span class="sourceLineNo">002</span><a id="line.2"> * Copyright 2018-2019 Statistisches Amt des Kantons Zürich</a>
+<span class="sourceLineNo">002</span><a id="line.2"> * Copyright 2018-2020 Statistisches Amt des Kantons Zürich</a>
 <span class="sourceLineNo">003</span><a id="line.3"> * </a>
 <span class="sourceLineNo">004</span><a id="line.4"> * Licensed under the Apache License, Version 2.0 (the "License");</a>
 <span class="sourceLineNo">005</span><a id="line.5"> * you may not use this file except in compliance with the License.</a>
@@ -34,7 +34,7 @@
 <span class="sourceLineNo">025</span><a id="line.25">/**</a>
 <span class="sourceLineNo">026</span><a id="line.26"> * This class is used to specify parameters which are not accessible by the external configuration file.</a>
 <span class="sourceLineNo">027</span><a id="line.27"> *</a>
-<span class="sourceLineNo">028</span><a id="line.28"> * @author  Daniel Bierer (Statistical Office of the Canton of Zurich)</a>
+<span class="sourceLineNo">028</span><a id="line.28"> * @author  Daniel Bierer (Statistisches Amt des Kantons Zürich)</a>
 <span class="sourceLineNo">029</span><a id="line.29"> * @version 2.4</a>
 <span class="sourceLineNo">030</span><a id="line.30"> */</a>
 <span class="sourceLineNo">031</span><a id="line.31">public class Conf</a>
@@ -141,8 +141,16 @@
 <span class="sourceLineNo">132</span><a id="line.132">            }</a>
 <span class="sourceLineNo">133</span><a id="line.133">            </a>
 <span class="sourceLineNo">134</span><a id="line.134">        }</a>
-<span class="sourceLineNo">135</span><a id="line.135">        </a>
-<span class="sourceLineNo">136</span><a id="line.136">    }</a>
+<span class="sourceLineNo">135</span><a id="line.135">    </a>
+<span class="sourceLineNo">136</span><a id="line.136">    /**</a>
+<span class="sourceLineNo">137</span><a id="line.137">     * Constructs a Conf object.</a>
+<span class="sourceLineNo">138</span><a id="line.138">     */</a>
+<span class="sourceLineNo">139</span><a id="line.139">    private Conf()</a>
+<span class="sourceLineNo">140</span><a id="line.140">        {</a>
+<span class="sourceLineNo">141</span><a id="line.141">        //see also https://stackoverflow.com/questions/31409982/java-best-practice-class-with-only-static-methods</a>
+<span class="sourceLineNo">142</span><a id="line.142">        }</a>
+<span class="sourceLineNo">143</span><a id="line.143">        </a>
+<span class="sourceLineNo">144</span><a id="line.144">    }</a>
 
 
 
